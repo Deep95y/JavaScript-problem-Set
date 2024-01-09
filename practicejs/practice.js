@@ -101,7 +101,7 @@ function destroyer(arr, ...args) {
 console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3))  // Output: [1, 1]
 
 
-//Problem 9: Spinal Tap Case
+//Problem 8: Spinal Tap Case
 //Convert a string to spinal case (all-lowercase-words-joined-by-dashes).
 
 
@@ -119,7 +119,7 @@ function spinalCase(str) {
 console.log(spinalCase("This Is Spinal Tap")); // Output: "this-is-spinal-tap"
 
 
-//Problem 10: Pig Latin
+//Problem 9: Pig Latin
 //Translate the provided string to Pig Latin.
 
 function translatePigLatin(str) {
@@ -136,7 +136,7 @@ console.log(translatePigLatin("consonant")); // Output: "onsonantcay"
 
 
 
-//Problem 11: Search and Replace
+//Problem 10: Search and Replace
 //Perform a search and replace on the sentence using the provided arguments and return the new sentence.
 
  function myReplace(str, before, after) {
@@ -147,7 +147,7 @@ console.log(translatePigLatin("consonant")); // Output: "onsonantcay"
    // Output: "He is Sitting on the couch"
 
 
-  //Problem 12: DNA Pairing
+  //Problem 11: DNA Pairing
   //The DNA strand is missing the pairing element. Write a function that takes each character, gets its pair, and retD array.
   
   function pairElement(str) {
@@ -163,7 +163,7 @@ console.log(translatePigLatin("consonant")); // Output: "onsonantcay"
 
   
   
-  //Problem 13: Missing Letters
+  //Problem 12: Missing Letters
   //Find the missing letter in the passed letter range and return it.
   
   function fearNotLetter(str) {
@@ -187,7 +187,7 @@ console.log(translatePigLatin("consonant")); // Output: "onsonantcay"
   console.log(fearNotLetter(abce)); // Output: "d"
 
 
- //Problem 14: Sorted Union
+ //Problem 13: Sorted Union
  // Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.
   
   function uniteUnique(arr1, arr2, arr3) {
@@ -199,7 +199,7 @@ console.log(translatePigLatin("consonant")); // Output: "onsonantcay"
   }
   console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));  // Output: [1, 3, 2, 5, 4]
 
-   //Problem 15: Convert HTML Entities
+   //Problem 14: Convert HTML Entities
   //Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
   
   
@@ -217,7 +217,7 @@ console.log(translatePigLatin("consonant")); // Output: "onsonantcay"
 
 
 
- //Problem 16: Sum All Primes
+ //Problem 15: Sum All Primes
  //Sum all the prime numbers up to and including the provided number.
  
  
@@ -235,7 +235,7 @@ console.log(translatePigLatin("consonant")); // Output: "onsonantcay"
   console.log(sumPrimes(10)); //output: 17
 
 
-  //Problem 18: Drop it
+  //Problem 16: Drop it
   //Drop the elements of an array (first argument), starting from the front, until the predicate (second argument) returns true.
    
   function dropElements(arr) {
@@ -252,7 +252,7 @@ console.log(translatePigLatin("consonant")); // Output: "onsonantcay"
 
 
 
-  //Problem 19: Steamroller
+  //Problem 17: Steamroller
   //Flatten a nested array. You must account for varying levels of nesting.
 
   function steamrollArray(arr) {
@@ -263,9 +263,9 @@ console.log(translatePigLatin("consonant")); // Output: "onsonantcay"
   console.log(steamrollArray([1, [2], [3, [[4]]]]));  // Output: [1, 2, 3, 4]
 
 
-  //Problem 20: Binary Agents
+  //Problem 18: Binary Agents
   //Return an English translated sentence of the passed binary string.
-  
+  //Solution:
   
   function binaryAgent(str) {
   const stringify = parseInt(str, 2);
@@ -273,3 +273,174 @@ console.log(translatePigLatin("consonant")); // Output: "onsonantcay"
   return binary;
   }
   console.log(binaryAgent("01001001 01110011 00100000 01000110 01110101 01101110?")); //Output: "Is Fun?"
+
+//Problem 19: Class Inheritance
+//Create a class Animal with properties name and sound. Then, create a subclass Dog that inherits from Animal and has an additional property breed. Finally, create an instance of Dog and display its properties.
+
+//Solution:
+class Animal {
+  constructor(name, sound) {
+    this.name = name;
+    this.sound = sound;
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, sound, breed) {
+    super(name, sound);
+    this.breed = breed;
+  }
+}
+
+const myDog = new Dog("Buddy", "Woof", "Golden Retriever");
+console.log(myDog); // Output: Dog { name: 'Buddy', sound: 'Woof', breed: 'Golden Retriever' }
+
+
+
+//Problem 20: Encapsulation
+//Create a class Person with a private property _age. Implement a public method getAge that returns the age. Make sure the age cannot be directly accessed from outside the class.
+
+
+//Solution:
+class Person {
+  constructor(age) {
+    this._age = age;
+  }
+
+  getAge() {
+    return this._age;
+  }
+}
+
+const john = new Person(30);
+console.log(john.getAge()); // Output: 30
+
+
+//Problem 21: JSON Parsing
+//Given a JSON string, write a function parseJSON that converts it into a JavaScript object.
+
+//Solution:
+function parseJSON(jsonString) {
+  return JSON.parse(jsonString);
+}
+
+const jsonString = '{"name": "John", "age": 25, "city": "New York"}';
+console.log(parseJSON(jsonString)); // Output: { name: 'John', age: 25, city: 'New York' }
+
+
+//Problem 22: JSON Stringification
+Write a function stringifyJSON that takes a JavaScript object and returns its JSON string representation.
+
+Solution:
+function stringifyJSON(obj) {
+  return JSON.stringify(obj);
+}
+
+const myObject = { name: 'Alice', age: 28, city: 'London' };
+console.log(stringifyJSON(myObject)); // Output: '{"name":"Alice","age":28,"city":"London"}'
+
+
+
+//Problem 23: Factory Function
+Create a factory function createPerson that takes parameters name and age and returns an object representing a person.
+
+Solution:
+function createPerson(name, age) {
+  return {name: name, age: age};
+}
+
+const person1 = createPerson('Bob', 35);
+console.log(person1); // Output: { name: 'Bob', age: 35 }
+
+
+
+//Problem 24: Composition
+//Implement a function combineObjects that takes two objects as parameters and returns a new object with properties from both objects.
+
+//Solution:
+function combineObjects(obj1, obj2) {
+  return { ...obj1, ...obj2 };
+
+}
+
+const objA = { a: 1, b: 2 };
+const objB = { b: 3, c: 4 };
+console.log(combineObjects(objA, objB)); // Output: { a: 1, b: 3, c: 4 }
+
+
+
+//Problem 25: Prototype
+//Create a prototype method reverseString for the String object that reverses the characters of a string.
+
+
+//Solution:
+String.prototype.reverseString = function () {
+  return myString.split('').reverse().join('');
+
+};
+
+const myString = 'hello';
+console.log(myString.reverseString()); // Output: 'olleh'
+
+
+//Problem 26: JSON Validation
+//Write a function isValidJSON that takes a string and checks if it is a valid JSON.
+
+//Solution:
+function isValidJSON(jsonString) {
+  try {
+    JSON.parse(jsonString);
+    return true;
+  } catch (error) {
+    return false;
+  }
+  
+}
+
+const validJSON = '{"name": "Alice", "age": 30}';
+const invalidJSON = '{name: "Bob", age: 25}';
+console.log(isValidJSON(validJSON)); // Output: true
+console.log(isValidJSON(invalidJSON)); // Output: false
+
+
+
+//Problem 27: JSON Array Manipulation
+//Write a function filterArray that takes a JSON array of objects and a property name, and returns a new array with objects having a truthy value for that property.
+
+//Solution:
+function filterArray(jsonArray, propertyName) {
+  return jsonArray.filter(obj => obj.hasOwnProperty(propertyName) && obj[propertyName]);
+}
+
+const jsonArray = [
+  { name: "Alice", age: 30 },
+  { name: "Bob", age: 25 },
+  { name: "charlie", age: 0 },
+];
+
+const filteredArray = filterArray(jsonArray, 'age');
+console.log(filteredArray);
+// Output: [{ name: 'Alice', age: 30 }, { name: 'Bob', age: 25 }]
+
+
+
+//Problem 28: JSON Object Modification
+//Write a function modifyObject that takes a JSON object, a property name, and a new value, and returns a new object with the specified property modified.
+
+//Solution:
+function modifyObject(jsonObject, propertyName, newValue) {
+  
+const modifiedObject = { ...jsonObject };
+  
+  // Modify the specified property with the new value
+  modifiedObject[propertyName] = newValue;
+
+  return modifiedObject;
+  
+}
+
+const myObject = { name: 'Alice', age: 28, city: 'London' };
+const modifiedObject = modifyObject(myObject, 'age', 29);
+console.log(modifiedObject);
+
+ // Output: { name: 'Alice', age: 29, city: 'London
